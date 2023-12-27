@@ -6,7 +6,7 @@ const paypal = require('@paypal/checkout-server-sdk');
 const app = express();
 app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static('public')); 
+app.use(express.static('public'));
 
 // PayPal Environment Configuration
 let environment = new paypal.core.SandboxEnvironment('ASCeaS9qiFx4TJIjOVRttUrY30HPzSZf14WkLAOV4-onwLfpQ_fk87PAmNGVwDql_sFjzJLNidTVpbjQ',
@@ -32,6 +32,10 @@ app.post('/create-order', async (req, res) => {
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
+});
+
+app.get('/', (req, res) => {
+    res.sendFile('index.html', { root: __dirname + '/public' });
 });
 
 // Email Sending Route
