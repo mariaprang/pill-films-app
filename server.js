@@ -35,8 +35,21 @@ app.post('/create-order', async (req, res) => {
 });
 
 app.get('/', (req, res) => {
-    res.sendFile('index.html', { root: __dirname + '/public' });
+    res.sendFile('index.html', { root: __dirname + '/public/pages' });
 });
+
+app.get('/script-coverage', (req, res) => {
+    res.sendFile('script-coverage.html', { root: __dirname + '/public/pages' });
+});
+
+app.get('/about-me', (req, res) => {
+    res.sendFile('about-me.html', { root: __dirname + '/public/pages' });
+});
+
+app.get('/contact-me', (req, res) => {
+    res.sendFile('contact-me.html', { root: __dirname + '/public/pages' });
+});
+
 
 // Email Sending Route
 app.post('/send-email', async (req, res) => {
