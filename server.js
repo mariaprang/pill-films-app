@@ -50,6 +50,9 @@ app.get('/contact-me', (req, res) => {
     res.sendFile('contact-me.html', { root: __dirname + '/public/pages' });
 });
 
+app.get('/script-coverage-payment', (req, res) => {
+    res.sendFile('script-coverage-payment.html', { root: __dirname + '/public/pages' });
+});
 
 // Email Sending Route
 app.post('/send-email', async (req, res) => {
