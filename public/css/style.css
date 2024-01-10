@@ -431,3 +431,8 @@ textarea {
 .accent-link:hover{
   color: var(--secondary-color);
 }
+
+.name-line{
+  text-align: center;
+  margin: 40px 0;
+}
