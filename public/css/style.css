@@ -17,7 +17,7 @@ body {
 
 .logo-wrap {
   font-family: "Courier Prime", monospace;
-  width: 100%;
+  width: fit-content;
   display: flex;
   justify-content: flex-start;
   font-weight: 800;
@@ -67,6 +67,10 @@ nav {
 .active {
   font-weight: bold;
   color: var(--secondary-color);
+  border-bottom: 5px solid var(--secondary-color);
+}
+
+.active-logo{
   border-bottom: 5px solid var(--secondary-color);
 }
 
@@ -183,7 +187,7 @@ nav {
 
 .form-intro {
   font-family: "Raleway", sans-serif;
-  font-size: 1rem;
+  font-size: 1.4rem;
   margin: 1% 0;
 }
 
