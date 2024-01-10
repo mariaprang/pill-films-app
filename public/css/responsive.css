@@ -30,6 +30,18 @@
         text-align: center;
     }
 
+    .name-line{
+        text-align: center;
+        margin: 30px 0;
+    }
+
+    .centered-text{
+        text-align: center;
+    }
+
+    .package-info{
+        margin: 20px 0;
+    }
     nav {
         flex-direction: column; /* Stack items vertically */
         align-items: center; /* Align items in the center */
