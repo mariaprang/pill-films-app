@@ -1,7 +1,10 @@
+require('dotenv').config();
+
 const express = require('express');
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
 const paypal = require('@paypal/checkout-server-sdk');
+
 
 const app = express();
 app.use(bodyParser.json());
@@ -35,7 +38,7 @@ app.post('/create-order', async (req, res) => {
 });
 
 app.get('/', (req, res) => {
-    res.sendFile('index.html', { root: __dirname + '/public/pages' });
+    res.sendFile('script-coverage.html', { root: __dirname + '/public/pages' });
 });
 
 app.get('/script-coverage', (req, res) => {
@@ -59,14 +62,14 @@ app.post('/send-email', async (req, res) => {
     let transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-            user: process.env.EMAIL_USER,
-            pass: process.env.EMAIL_PASS,
+            user: process.env.GMAIL_USER,
+            pass: process.env.GMAIL_PASS,
         },
     });
 
     let mailOptions = {
         from: '"Pill Films Contact Form" <your-email@gmail.com>',
-        to: 'recipient@example.com',
+        to: process.env.GMAIL_USER,
         subject: `New Contact from ${req.body.firstName} ${req.body.lastName}: ${req.body.subject}`,
         text: req.body.message,
         html: `<p>You have a new contact request from:</p>
